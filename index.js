@@ -31,10 +31,7 @@ app.use((err, req, res, next) => {
 // 🛠 Connect using MONGO_URI from .env
 const PORT = process.env.PORT || 4500;
 
-mongoose.connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-})
+mongoose.connect(process.env.MONGO_URI)
     .then(() => {
         app.listen(PORT, '0.0.0.0', () => console.log(`Server running on port ${PORT}`));
     })
