@@ -11,6 +11,15 @@ app.use(cors({
     origin: '*', // For development only
 }));
 
+
+require('dotenv').config();
+
+const MONGO_URI = process.env.MONGO_URI;
+if (!MONGO_URI) {
+    console.error("❌ MONGO_URI not found. Make sure it's set in Render.");
+    process.exit(1); // Stop app if missing
+}
+
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/assets', require('./routes/assets'));
