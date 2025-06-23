@@ -4,6 +4,7 @@
   "description": "Thid is a demo application to make unique wallets for unique users for bnb testnet blockchain",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "\"echo \\\"No tests yet\\\"\""
   },
   "keywords": [
